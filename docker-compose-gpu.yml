@@ -1,0 +1,30 @@
+services:
+  ollama-gpu:
+    image: ollama/ollama
+    container_name: ollama_gpu
+    devices:
+      - /dev/dri:/dev/dri
+    environment:
+      - OLLAMA_DEBUG=1
+    ########
+    volumes:
+      - ./ollama:/root/.ollama
+    # expose:
+    #   - 11434
+    ports:
+      - 11434:11434
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    # networks:
+    #   - shared-network
+
+
+    # networks:
+    #   shared-network:
+    #     external: true
