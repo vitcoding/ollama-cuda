@@ -1,6 +1,9 @@
 # ollama (gpu)
 OLLAMA-GPU-DC = docker-compose-gpu.yml
 OLLAMA-GPU-NAME = ollama-gpu
+# ollama (cpu)
+OLLAMA-CPU-DC = docker-compose-cpu.yml
+OLLAMA-CPU-NAME = ollama-cpu
 
 
 # net-create:
@@ -23,6 +26,22 @@ stop-$(OLLAMA-GPU-NAME):
 	docker compose -f $(OLLAMA-GPU-DC) stop
 start-$(OLLAMA-GPU-NAME):
 	docker compose -f $(OLLAMA-GPU-DC) start
+
+
+# ollama (cpu)
+# OLLAMA-CPU-NAME = ollama-cpu
+create-$(OLLAMA-CPU-NAME):
+	docker compose -f $(OLLAMA-CPU-DC) up -d --build --force-recreate
+destroy-$(OLLAMA-CPU-NAME):
+	docker compose -f $(OLLAMA-CPU-DC) down --rmi all --volumes --remove-orphans
+up-$(OLLAMA-CPU-NAME):
+	docker compose -f $(OLLAMA-CPU-DC) up -d
+down-$(OLLAMA-CPU-NAME):
+	docker compose -f $(OLLAMA-CPU-DC) down -v
+stop-$(OLLAMA-CPU-NAME):
+	docker compose -f $(OLLAMA-CPU-DC) stop
+start-$(OLLAMA-CPU-NAME):
+	docker compose -f $(OLLAMA-CPU-DC) start
 
 
 # ollama gpu commands
