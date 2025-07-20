@@ -47,8 +47,12 @@ start-$(OLLAMA-CPU-NAME):
 ollama-pull:
 	docker exec -it ollama_gpu ollama list
 
+# docker exec -it ollama_gpu ollama pull qwen3:8b
+# docker exec -it ollama_gpu ollama pull qwen3:8b-q4_K_M
 # docker exec -it ollama_gpu ollama pull qwen3:8b-q8_0
+# docker exec -it ollama_gpu ollama pull qwen3:14b
 # docker exec -it ollama_gpu ollama pull qwen3:14b-q4_K_M
+# docker exec -it ollama_gpu ollama pull qwen2.5:7b
 # docker exec -it ollama_gpu ollama pull qwen2.5:7b-instruct-q8_0
 # docker exec -it ollama_gpu ollama pull qwen2.5:14b-instruct-q4_1
 # docker exec -it ollama_gpu ollama pull gemma2:9b
@@ -66,6 +70,9 @@ ollama-pull:
 # docker exec -it ollama_gpu ollama pull llama3.1:8b-instruct-q8_0
 # docker exec -it ollama_gpu ollama pull codellama:13b
 # docker exec -it ollama_gpu ollama pull llama3.2-vision:11b
+
+# docker exec -it ollama_gpu ollama pull llama3.2:3b
+# docker exec -it ollama_gpu ollama pull evilfreelancer/enbeddrus
 
 # docker exec -it ollama_gpu ollama pull gemma3:4b
 # docker exec -it ollama_gpu ollama pull gemma3:12b
