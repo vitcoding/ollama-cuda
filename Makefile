@@ -64,6 +64,7 @@ ollama-pull:
 # docker exec -it ollama_gpu ollama pull qwen2.5-coder:14b-instruct-q4_0
 # docker exec -it ollama_gpu ollama pull qwen2.5-coder:14b-instruct-q4_1
 # docker exec -it ollama_gpu ollama pull qwen2.5-coder:14b-instruct-q6_K
+# docker exec -it ollama_gpu ollama pull qwen2.5-coder:32b-instruct-q4_1
 # docker exec -it ollama_gpu ollama pull llama2-uncensored:7b
 # docker exec -it ollama_gpu ollama pull llama2-uncensored:7b-chat-q8_0
 # docker exec -it ollama_gpu ollama pull llama3.1:8b
@@ -77,7 +78,8 @@ ollama-pull:
 # docker exec -it ollama_gpu ollama pull gemma3:4b
 # docker exec -it ollama_gpu ollama pull gemma3:12b
 # docker exec -it ollama_gpu ollama pull gemma3:12b-it-q8_0
-# docker exec -it ollama_gpu ollama pull gemma3:12b-it-fp16    
+# docker exec -it ollama_gpu ollama pull gemma3:12b-it-fp16
+# docker exec -it ollama_gpu ollama pull gemma3:27b-it-qat
 
 # ollama gpu commands
 # docker exec -it ollama_gpu ollama list
