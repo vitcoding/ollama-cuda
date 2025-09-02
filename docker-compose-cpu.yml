@@ -1,4 +1,21 @@
 services:
+  ollama-webui:
+    image: ghcr.io/open-webui/open-webui:git-09a81eb
+    container_name: ollama_webui
+    expose:
+      - 8080/tcp
+    ports:
+      - "8085:8080"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama-gpu:11434
+    volumes:
+      - ./open-webui:/app/backend/data
+    restart: unless-stopped
+    depends_on:
+      - ollama-cpu
+    # networks:
+    #   - shared-network
+
   ollama-cpu:
     image: ollama/ollama
     container_name: ollama_cpu

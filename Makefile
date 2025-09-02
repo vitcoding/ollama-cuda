@@ -11,6 +11,20 @@ OLLAMA-CPU-NAME = ollama-cpu
 # net-rm:
 # 	docker network rm shared-network;
 
+# default (gpu)
+up:
+	make up-$(OLLAMA-GPU-NAME)
+down:
+	make down-$(OLLAMA-GPU-NAME)
+stop:
+	make stop-$(OLLAMA-GPU-NAME)
+start:
+	make start-$(OLLAMA-GPU-NAME)
+
+restart:
+	make stop
+	make start
+
 
 # ollama (gpu)
 # OLLAMA-GPU-NAME = ollama-gpu
