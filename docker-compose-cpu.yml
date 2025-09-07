@@ -5,7 +5,7 @@ services:
     expose:
       - 8080/tcp
     ports:
-      - "8085:8080"
+      - "8086:8080"
     environment:
       - OLLAMA_BASE_URL=http://ollama-gpu:11435
     volumes:
